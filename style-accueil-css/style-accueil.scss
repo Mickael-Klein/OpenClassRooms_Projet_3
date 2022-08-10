@@ -1,0 +1,877 @@
+@import url(normalize.css);
+
+$primaire : #9356DC ;
+$secondaire : #FF79DA;
+$tertiaire : #99E2D0;
+$grey : #eaeaea;
+$lightgrey : #f6f6f6;
+$darkgrey : #383838;
+$mediumgrey: #6b6b6b;
+
+
+@mixin flex($justify, $item) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $item;
+}
+
+@mixin flexFlow($sens) {
+    flex-flow: $sens wrap;
+}
+
+@mixin width($percent) {
+    width : $percent;
+}
+
+@mixin marginSide($margin) {
+    margin-left: $margin;
+    margin-right: $margin;
+}
+
+@mixin marginY($margin) {
+    margin-top: $margin;
+    margin-bottom: $margin;
+}
+
+@mixin boxshadow {
+    box-shadow: 0 10px 20px rgba(220,220,220,220.19), 0 6px 6px rgba(220,220,220,220.23);
+}
+
+@mixin boxshadowHover {
+    box-shadow: 0 19px 38px rgba(220,220,220,220.4), 0 15px 12px rgba(220,220,220,220.32);
+}
+
+@mixin noStyleLink {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+@mixin btn--new {
+    height: 15%;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: $tertiaire;
+    color: darken($color: $tertiaire, $amount: 40%);
+    @include flex(center,center);
+    border-radius: 3px;
+
+    @media screen and (min-width: 992px) {
+        top: 10%;
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 1.2rem 1rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    @include noStyleLink;
+}
+
+.btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: whitesmoke;
+    background: linear-gradient(160deg, $secondaire, $primaire);
+    border-radius: 2rem;
+    text-align: center;
+    @include boxshadow;
+
+    &:hover {
+        cursor: pointer;
+        background: linear-gradient(160deg,lighten($secondaire, 5) ,lighten($primaire, 5));
+        color: darken($color: whitesmoke, $amount: 5);
+        @include boxshadowHover;
+    }
+}
+
+body {
+    @include width(100%);
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    @include width(100%);
+    @include flex(center, center);
+    @include flexFlow(column);
+
+    @media screen and (min-width: 992px) {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        }
+}
+
+.header__title {
+    @include width(100%);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 1px 4px 2px rgba(196, 196, 196, 0.5);
+    background: white;
+}
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: 'Shrikhand', cursive, sans-serif;
+    font-size: 2.3rem;
+    font-weight: 500;
+}
+
+.localisation {
+    background-color: $grey;
+    @include width(100%);
+    @include flex(center,center);
+    @include flexFlow(row);
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: lighten($color: black, $amount: 23);
+    
+    i {
+        position: relative;
+        right: -75px;
+    }
+
+    &__content {
+        border: 0px;
+        @include flex(center,center);
+        background: $grey;
+        padding-left: 90px;
+        height: 60px;
+    }
+}
+
+::placeholder {
+    color: $darkgrey;
+    font-weight: 600;
+}
+
+main {
+    @include width(100%);
+}
+
+.presentation {
+    @include width(100%);
+    background-color: $lightgrey;
+    @include flex(center,center);
+    @include flexFlow(column);
+    padding: 1rem 1.5rem;
+    text-align: center;
+    h2 {
+        font-size: 1.7rem;
+        font-weight: 700;
+        padding: 0rem 2rem;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 1.05rem;
+        font-weight: 400;
+        margin-top: 0px;
+        color: $darkgrey;
+        margin-bottom: 35px;
+    }
+    &__btn {
+        margin-bottom: 25px;
+    }
+}
+
+.fonctionnement {
+    @include width(90%);
+    @include marginSide(5%);
+
+    h2 {
+        margin-top: 45px;
+        margin-bottom: 35px;
+        font-weight: 700;
+        font-size: 1.7rem;
+    }
+
+    &__content {
+        @include width(100%);
+        @include flex(center,center);
+        @include flexFlow(column);
+
+        @media screen and (min-width: 768px) {
+        width: 85%;
+        margin: auto;
+        }
+
+        @media screen and (min-width: 992px) {
+            width: 100%;
+            @include flex(space-between,center);
+            @include flexFlow(row);
+        }
+    }
+    
+    &__item {
+        @include width(100%);
+        @include flex(center, center);
+        @include flexFlow(row);
+        gap: 15px;
+        background-color: $lightgrey;
+        margin-bottom: 30px;
+        padding: 0.7rem 0rem;
+        border-radius: 1.3rem;
+        @include boxshadow;
+        transition: all 500ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.05);
+            background-color: lighten($color: $primaire, $amount: 35%);
+            @include boxshadowHover;
+        }
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 40px;
+        }
+
+        &--deguster {
+            background-color: lighten($color: $primaire, $amount: 35%);
+
+            .fa-store {
+                color: $primaire;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            &--composer .item__content i {
+                right: 45px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            &--composer .item__content i {
+                right: 45%;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            width: 30%;
+
+            &--composer .item__content i {
+                right: 30px;
+            }
+        }
+    }
+}
+
+.item {
+    &__num {
+        color: white;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $primaire;
+        border-radius: 150px;
+        margin-right: auto;
+        position: relative;
+        left: -12px;
+        font-size: 0.8rem;
+    }
+    &__content {
+        @include flex(center,center);
+        margin-right: auto;
+        font-size: 1.1rem;
+
+        i {
+            position: relative;
+            right: 40px;
+            color: $mediumgrey;
+            font-size: 1.3rem;
+            margin-top: 3px;
+
+            @media screen and (min-width: 768px) {
+                right: 40%;
+            }
+
+            @media screen and (min-width: 992px) {
+                right: 30px;
+            }
+        }
+
+        p {
+            font-weight: 600;
+        }
+    }
+}
+
+.restaurants {
+    @include width(100%);
+    background-color: $lightgrey;
+
+    h2 {
+        padding-top: 45px;
+        padding-bottom: 35px;
+        margin: 0px;
+        margin-left: 5%;
+        font-weight: 700;
+        font-size: 1.7rem;
+    }
+
+    &__grid {
+        @include width(90%);
+        @include marginSide(5%);
+
+        @media screen and (min-width: 768px) {
+            @include flex(space-between,center);
+            @include flexFlow(row);
+            gap: 20px;
+            padding-bottom: 40px;
+            width: 90%;
+            margin: auto;
+        }
+    }
+}
+
+.card {
+    @include width(100%);
+    height: 240px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    @include boxshadow;
+    overflow: hidden;
+    
+    transform: scale(1);
+    transition: transform 500ms ease-in-out;
+
+    &:hover {
+        @include boxshadowHover;
+
+        transform: scale(1.05);
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 47%;
+    }
+
+    @media screen and (min-width: 992px) {
+        height: 350px;
+    }
+
+    &__image {
+        height: 170px;
+        position: relative;
+
+        @media screen and (min-width: 992px) {
+            height: 270px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__body {
+        height: 70px;
+        @include width(100%);
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        @media screen and (min-width: 992px) {
+            height: 80px;
+        }
+    }
+
+    &__title {
+        padding-left: 15px;
+        display: flex;
+        @include flexFlow(column);
+        gap: 3px;
+
+        @media screen and (min-width: 992px) {
+            padding-left: 40px;
+        }
+
+        h3 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+            @media screen and (min-width: 992px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        p {
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+            @media screen and (min-width: 992px) {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    &__heart {
+        margin-right: 40px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* styliser le bouton Nouveau */
+.btn--new {
+    @include btn--new;
+}
+
+/* styliser les svg heart */
+.center__div {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+  }
+
+.svg__heart--outline {
+    opacity: 1;
+    transition: all 500ms ease-in-out;
+  }
+  
+.card__heart:hover .svg__heart--outline, .card__heart:active .svg__heart--outline {
+      opacity: 0;
+  }
+
+.restaurant__heart:hover .svg__heart--outline, .restaurant__heart:active .svg__heart--outline {
+    opacity: 0;
+}
+  
+  .svg__heart--filled {
+    opacity: 0;
+    transform: scale(1);
+    transition: all 500ms ease-in-out;
+  }
+  
+  .card__heart:hover .svg__heart--filled, .card__heart:active .svg__heart--filled {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  .restaurant__heart:hover .svg__heart--filled, .restaurant__heart:active .svg__heart--filled {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  
+  /*.
+  .svg__heart--filled {
+    opacity: 1;
+  }
+  */
+  
+  .svg__heart--outline {
+    //z-index: 1; 
+    background: rgba(0,0,0,0);
+  }
+  
+  .color-primary {
+    stop-color: $secondaire;
+    stop-opacity: 1;
+  }
+  
+  .color-secondary {
+    stop-color:$primaire;
+    stop-opacity:1;
+  }
+
+/* Fin css animation heart */
+
+footer {
+    background-color: #353535;
+
+    a {
+        color: white;
+    }
+
+    h2 {
+        font-family: 'Shrikhand', cursive, sans-serif;
+        font-weight: 400;
+        margin: 0px;
+    }
+}
+
+.footer {
+    &__content {
+        margin-left: 5%;
+        color: white;
+    }
+
+    &__title {
+        padding: 22px 0px;
+        font-size: 0.8rem;
+
+        @media screen and (min-width: 992px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__body {
+        padding-bottom: 25px;
+
+        @media screen and (min-width: 992px) {
+            @include flex(space-evenly, center);
+            @include flexFlow(row);
+            gap: 15px;
+            padding-left: 5%;
+            font-size: 1.15rem;
+        }
+    }
+
+    &__elem {
+        margin-bottom: 10px;
+
+        &--icon {
+            display: flex;
+            gap: 24px;
+            i {
+                width: 0.3rem;
+                height: 0.3rem;
+            }
+        }
+    }
+}
+
+// Animation des liens footer
+
+.footer__elem a {
+    display: inline-block;
+    position: relative;
+    color: white;
+  }
+  
+  .footer__elem a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: -3px;
+    left: 0;
+    background-color: $primaire;
+    transform-origin: bottom right;
+    transition: transform 300ms ease-out;
+  }
+  
+  .footer__elem a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+// Animation du Loader ici
+
+.filter-for-animation {
+    width: 100%;
+    height: 100%;
+    @include flex(center,center);
+    background: rgba(107,107,107, 0.6);
+    animation: filter 3500ms forwards 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 2;
+}
+
+@keyframes filter {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+}
+
+.animate {
+    width: 450px;
+    height: 200px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: container-anim 1200ms forwards;
+  }
+  
+  .move--left {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: moving-left 1500ms forwards 1500ms;
+    font-weight: 500;
+  }
+  
+  @keyframes moving-left {
+    from {
+      transform: translateX(0px);
+    }
+    to {
+      transform: translateX(35px);
+    }
+  }
+  
+  .letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-family: 'Shrikhand', cursive, sans-serif;
+    font-weight: 500;
+  }
+  
+  .letter1 {
+    transform: translate(0px, 0px);
+    width: 15px;
+    animation: letter1 1800ms forwards 1200ms;
+    color: $primaire;
+  }
+  
+  .letter2 {
+    transform: translate(0px, 0px);
+    width: 35px;
+    animation: letter2 1600ms forwards 1400ms;
+    color: $primaire;
+  }
+  
+  .letter3 {
+    transform: translate(0px, 0px);
+    width: 35px;
+    animation: letter3 1400ms forwards 1600ms;
+    color: $primaire;
+  }
+  
+  .letter4 {
+    transform: translate(0px, 0px);
+    width: 35px;
+    animation: letter4 1200ms forwards 1800ms;
+    color: $primaire;
+  }
+  
+  .letter5 {
+    width: 30px;
+    color: $primaire;
+  }
+  
+  .letter6 {
+    transform: translate(0px, 0px);
+    width: 38px;
+    animation: letter6 1200ms forwards 1800ms;
+    color: $tertiaire;
+  }
+  
+  .letter7 {
+    transform: translate(0px, 0px);
+    animation: letter7 1400ms forwards 1600ms;
+    color: $tertiaire;
+  }
+  
+  .letter8 {
+    transform: translate(0px, 0px);
+    width: 38px;
+    animation: letter8 1600ms forwards 1400ms;
+    color: $secondaire;
+  }
+  
+  .letter9 {
+    width: 35px;
+    transform: translate(0px, 0px);
+    animation: letter9 1800ms forwards 1200ms;
+    color: $secondaire;
+  }
+  
+  @keyframes container-anim {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    50%, 100% {
+        opacity: 1;
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes letter1 {
+  
+    15% {
+      transform: translate(-25px, 0px);
+    }
+    25% {
+      transform: translate(-25px, -40px);
+    }
+    75% {
+      transform: translate(285px, -40px);
+    }
+    85% {
+      transform: translate(285px, 0px);
+    }
+    100% {
+      transform: translate(255px, 0px);
+    }
+  }
+  
+  @keyframes letter2 {
+  
+    15% {
+      transform: translate(-20px, 0px);
+    }
+    25% {
+      transform: translate(-20px, 40px);
+    }
+    75% {
+      transform: translate(225px, 40px);
+    }
+    85% {
+      transform: translate(225px, 0px);
+    }
+      100% {
+      transform: translate(205px, 0px);
+    }
+  }
+  
+  @keyframes letter3 {
+  
+    15% {
+      transform: translate(-15px, 0px);
+    }
+    25% {
+      transform: translate(-15px, -40px);
+    }
+    75% {
+      transform: translate(150px, -40px);
+    }
+    85% {
+      transform: translate(150px, 0px);
+    }
+      100% {
+      transform: translate(135px, 0px);
+    }
+  }
+  
+  @keyframes letter4 {
+  
+    15% {
+      transform: translate(-10px, 0px);
+    }
+    25% {
+      transform: translate(-10px, 40px);
+    }
+    75% {
+      transform: translate(75px, 40px);
+    }
+    85% {
+      transform: translate(75px, 0px);
+    }
+      100% {
+      transform: translate(65px, 0px);
+    }
+  }
+  
+  @keyframes letter6 {
+  
+      10% {
+      transform: translate(10px, 0px);
+    }
+    20% {
+      transform: translate(10px, -40px);
+    }
+    80% {
+      transform: translate(-80px, -40px);
+    }
+    90%{
+      transform: translate(-80px, 0px);
+    }
+      100% {
+      transform: translate(-70px, 0px);
+    }
+  }
+  
+  @keyframes letter7 {
+  
+      10% {
+      transform: translate(15px, 0px);
+    }
+    20% {
+      transform: translate(15px, 40px);
+    }
+    80% {
+      transform: translate(-170px, 40px);
+    }
+    90% {
+      transform: translate(-170px, 0px);
+    }
+      100% {
+      transform: translate(-155px, 0px);
+    }
+  }
+  
+  @keyframes letter8 {
+  
+      10% {
+      transform: translate(20px, 0px);
+    }
+    20% {
+      transform: translate(20px, -40px);
+    }
+    80% {
+      transform: translate(-265px, -40px);
+    }
+    90% {
+      transform: translate(-265px, 0px);
+    }
+      100% {
+      transform: translate(-245px, 0px);
+    }
+  }
+  
+  @keyframes letter9 {
+      10% {
+      transform: translate(25px, 0px);
+    }
+    20% {
+      transform: translate(25px, 40px);
+    }
+    80% {
+      transform: translate(-342px, 40px);
+    }
+    90% {
+      transform: translate(-342px, 0px);
+    }
+      100% {
+      transform: translate(-317px, 0px);
+    }
+  }
