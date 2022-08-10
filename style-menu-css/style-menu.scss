@@ -1,0 +1,318 @@
+@import "../style-accueil-css/style-accueil.scss";
+
+.header__title {
+    box-shadow: 0px 0px 0px 0px rgba($color: white, $alpha: 0);
+
+    h1 {
+        margin-top: 20px;
+    }
+
+    &--icon {
+        position: absolute;
+        width: 25%;
+        height: 100%;
+        @include flex(center,center);
+        font-size: 1.6rem;
+        color: black;
+
+        a {
+            position: relative;
+            top: 6px;
+            left: -15px;
+        }
+    }
+}
+
+.localisation {
+    display: none;
+}
+
+main {
+    background-color: $lightgrey;
+    border-top: 2px solid $lightgrey;
+}
+
+.main {
+    width: 100%;
+    &__image {
+        width: 100%;
+        height: 275px;
+        position: relative;
+        border-bottom: solid 1px $lightgrey;
+
+        @media screen and (min-width: 768px) {
+            height: 320px;
+        }
+
+        @media screen and (min-width: 992px) {
+            height: 350px;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        width: 90%;
+        background-color: $lightgrey;
+        @include marginSide(5%);
+
+        h2 {
+            margin: 0px;
+            border-top: 2px solid $lightgrey;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        @include flexFlow(column);
+
+        @media screen and (min-width: 992px) {
+            @include flex (space-evenly, flex-start);
+            @include flexFlow(row);
+            gap: 15px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                width: 40px;
+                height: 3px;
+                background: $tertiaire;
+            }
+        }
+    }
+
+    &__button {
+        width: 50%;
+        margin: auto;
+        padding-top: 35px;
+        padding-bottom: 70px;
+    }
+}
+
+.btn--menu {
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    @media screen and (min-width: 768px) {
+        width: 33%;
+        margin: auto;
+    }
+}
+
+.upInImage {
+    width: 100%;
+    background-color: $lightgrey;
+    padding-top: 20px;
+    margin-top: -50px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.restaurant {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    &__title {
+        h2 {
+            font-size: 1.75rem;
+            font-family: 'Shrikhand', cursive, sans-serif;
+            font-weight: 400;
+        }
+    }
+
+    &__heart {
+        position: relative;
+        margin-top: 10px;
+        margin-right: 50px;
+    }
+}
+
+
+.grid__element {
+    margin-bottom: 0px;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: 992px) {
+        width: 31%;
+        min-width: 350px;
+    }
+}
+
+.menu {
+    &__item {
+        background-color: white;
+        border-radius: 15px;
+        display: flex;
+        margin-bottom: 17px;
+        @include boxshadow;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+
+        @media screen and (min-width: 768px) {
+            width: 47%;
+            margin-bottom: 22px;
+        }
+
+        @media screen and (min-width: 992px) {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        &:hover {
+            .item__textContent {
+                width: 67%;
+            }
+
+            .item__onHover {
+                margin-right: 0px;
+            }
+
+            .onHover__checked {
+                width: 30px;
+                height: 30px;
+                @include flex(center, center);
+            }
+
+            .onHover__checked i {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
+
+.item {
+    &__textContent {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        width: 85%;
+        transition: width 500ms ease-in-out;
+
+        h4 {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            width: 100%;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        p {
+            margin-top: 0px;
+            margin-bottom: 15px;
+            width: 100%;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__price {
+        width: 20%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        p {
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 0px;
+            padding-left: 15px;
+            padding-bottom: 15px;
+        }
+    }
+
+    &__onHover {
+        width: 22%;
+        background-color: $tertiaire;
+        margin-right: -22%;
+        transition: margin-right 500ms ease-in-out;
+        @include flex(center,center);
+    }
+}
+
+.onHover__checked {
+    background: white;
+    border-radius: 50%;
+    padding: 0.35rem;
+
+    i {
+        font-size: 1.1rem;
+        color: $tertiaire;
+        transform: rotate(0deg);
+        transition: transform 300ms ease;
+        transition-delay: 200ms;
+    }
+}
+
+
+//animation fade-up
+
+.repasMoment__grid {
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+}
+
+.menu__item {
+    animation: fade-up 800ms forwards;
+    opacity: 0;
+}
+
+@keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateY(0px);
+    }
+  }
+
+.menu__item:nth-child(1) {
+    animation: fade-up 1s ease-out 0.1s 1 normal forwards;
+}
+
+.menu__item:nth-child(2) {
+    animation: fade-up 1s ease-out 0.3s 1 normal forwards;
+}
+
+.menu__item:nth-child(3) {
+    animation: fade-up 1s ease-out 0.5s 1 normal forwards;
+}
+
+.menu__item:nth-child(4) {
+    animation: fade-up 1s ease-out 0.7s 1 normal forwards;
+}
