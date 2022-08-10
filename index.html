@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Ohmyfood!</title>
+    <!-- Import fichier de style css -->
+    <link rel="stylesheet" href="../Klein_Mickael_1_code_072022/css/style-accueil-css/style-accueil.css">
+    <!-- import de la police google font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+    <!-- Import de Font Awesome pour l'utilisation des icones requis -->    
+    <script src="https://kit.fontawesome.com/c29ae20713.js" crossorigin="anonymous"></script>
+    <!-- Import du favicon du site web -->
+    <link rel="icon" type="image/png" href="../Klein_Mickael_1_code_072022/assets/favicon/Favicon-Ohmyfood!.png" />
+</head>
+<body>
+
+    <div class="filter-for-animation">
+        <div class="animate">
+            <div class="move--left">
+              <div class="letter letter1">!</div>
+              <div class="letter letter2">D</div>
+              <div class="letter letter3">O</div>
+              <div class="letter letter4">O</div>
+              <div class="letter letter5">F</div>
+              <div class="letter letter6">Y</div>
+              <div class="letter letter7">M</div>
+              <div class="letter letter8">H</div>
+              <div class="letter letter9">O</div>
+            </div>
+           </div>
+    </div>
+
+    
+    <header>
+
+        <div class="header__title">
+            <h1>ohmyfood</h1>
+        </div>
+
+        <div class="localisation">
+            <i class="localisation__icon fa-solid fa-location-dot"></i>
+            <input type="text" class="localisation__content" placeholder="Paris, Belleville">
+        </div>
+    
+    </header>
+
+    <main>
+
+        <section class="presentation">
+
+            <div class="presentation__text">
+                <h2>Réservez le menu qui vous convient</h2>
+                <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+            </div>
+
+            <div class="presentation__btn presentation__btn--acceuil btn">
+                Explorer nos restaurants
+            </div>
+
+        </section>
+
+        <section class="fonctionnement">
+
+            <h2>Fonctionnement</h2>
+
+            <div class="fonctionnement__content">
+
+                <div class="fonctionnement__item fonctionnement__item--choisir">
+                    <div class="item__num">1</div>
+                    <div class="item__content">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <p>Choisissez un restaurant</p>
+                    </div>
+                </div>
+
+                <div class="fonctionnement__item fonctionnement__item--composer">
+                    <div class="item__num">2</div>
+                    <div class="item__content">
+                        <i class="fa-solid fa-list"></i>
+                        <p>Composez votre menu</p>
+                    </div>
+                </div>
+
+                <div class="fonctionnement__item fonctionnement__item--deguster">
+                    <div class="item__num">3</div>
+                    <div class="item__content">
+                        <i class="fa-solid fa-store"></i>
+                        <p>Dégustez au restaurant</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="restaurants">
+
+            <h2>Restaurants</h2>
+
+            <div class="restaurants__grid">
+
+                <div class="card restaurant__card">
+                    <a href="../Klein_Mickael_1_code_072022/menu-palette.html">
+                        <div class="card__image card__image--new">
+                            <img src="../Klein_Mickael_1_code_072022/assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Vue de côté assiette gastronomique">
+                            <div class="btn--new"> <p>Nouveau</p></div>
+                        </div>
+                        <div class="card__body">
+
+                            <div class="card__title">
+                                <h3>La palette du goût</h3>
+                                <p>Ménilmontant</p>
+                            </div>
+
+                            <div class="card__heart">
+                                <div class="center__div center__div--heartFilled">
+                                    <svg class="svg__heart--filled" width="29" height="29" viewBox="0 0 16 16">
+                                        <defs>
+                                            <linearGradient id="grad1" x1="0%" y1="100%" x2="50%" y2="0%">
+                                                <stop offset="0%" class="color-primary"/>
+                                                <stop offset="100%" class="color-secondary"/>
+                                            </linearGradient>
+                                        </defs>
+                                    <path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" fill="url(#grad1)"></path> </svg>
+                                </div>
+                                  
+                                <div class="center__div">
+                                    <svg class="svg__heart--outline" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"> 
+                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/> 
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card restaurant__card">
+                    <a href="../Klein_Mickael_1_code_072022/menu-note.html">
+                        <div class="card__image card__image--new">
+                            <img src="../Klein_Mickael_1_code_072022/assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Vue plongeante sur assiete Cromesquis et légumes méditerranéens">
+                            <div class="btn--new"> <p>Nouveau</p></div>
+                        </div>
+                        <div class="card__body">
+
+                            <div class="card__title">
+                                <h3>La note enchantée</h3>
+                                <p>Charonne</p>
+                            </div>
+
+                            <div class="card__heart">
+                                <div class="center__div center__div--heartFilled">
+                                    <svg class="svg__heart--filled" width="29" height="29" viewBox="0 0 16 16">
+                                        <defs>
+                                            <linearGradient id="grad2" x1="0%" y1="100%" x2="50%" y2="0%">
+                                                <stop offset="0%" class="color-primary"/>
+                                                <stop offset="100%" class="color-secondary"/>
+                                            </linearGradient>
+                                        </defs>
+                                    <path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" fill="url(#grad1)"></path> </svg>
+                                </div>
+                                  
+                                <div class="center__div">
+                                    <svg class="svg__heart--outline" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"> 
+                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/> 
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card restaurant__card">
+                    <a href="../Klein_Mickael_1_code_072022/menu-française.html">
+                        <div class="card__image">
+                            <img src="../Klein_Mickael_1_code_072022/assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Vue plongeante sur assiette Œufs Bénédicte">
+                        </div>
+                        <div class="card__body">
+
+                            <div class="card__title">
+                                <h3>À la française</h3>
+                                <p>Cité Rouge</p>
+                            </div>
+
+                            <div class="card__heart">
+                                <div class="center__div center__div--heartFilled">
+                                    <svg class="svg__heart--filled" width="29" height="29" viewBox="0 0 16 16">
+                                        <defs>
+                                            <linearGradient id="grad3" x1="0%" y1="100%" x2="50%" y2="0%">
+                                                <stop offset="0%" class="color-primary"/>
+                                                <stop offset="100%" class="color-secondary"/>
+                                            </linearGradient>
+                                        </defs>
+                                    <path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" fill="url(#grad1)"></path> </svg>
+                                </div>
+                                  
+                                <div class="center__div">
+                                    <svg class="svg__heart--outline" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"> 
+                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/> 
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card restaurant__card">
+                    <a href="../Klein_Mickael_1_code_072022/menu-délice.html">
+                        <div class="card__image">
+                            <img src="../Klein_Mickael_1_code_072022/assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Vue de côté assiette poisson">
+                        </div>
+                        <div class="card__body">
+
+                            <div class="card__title">
+                                <h3>Le délice des sens</h3>
+                                <p>Folie-Méricourt</p>
+                            </div>
+
+                            <div class="card__heart">
+                                <div class="center__div center__div--heartFilled">
+                                    <svg class="svg__heart--filled" width="29" height="29" viewBox="0 0 16 16">
+                                        <defs>
+                                            <linearGradient id="grad4" x1="0%" y1="100%" x2="50%" y2="0%">
+                                                <stop offset="0%" class="color-primary"/>
+                                                <stop offset="100%" class="color-secondary"/>
+                                            </linearGradient>
+                                        </defs>
+                                    <path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" fill="url(#grad1)"></path> </svg>
+                                </div>
+                                  
+                                <div class="center__div">
+                                    <svg class="svg__heart--outline" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"> 
+                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/> 
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer__content">
+            <div class="footer__title">
+                <h2>ohmyfood</h2>
+            </div>
+    
+            <div class="footer__body">
+    
+                <div class="footer__elem footer__elem--icon">
+                    <i class="fa-solid fa-utensils"></i>
+                    <a href="#">Proposer un restaurant</a>
+                </div>
+    
+                <div class="footer__elem footer__elem--icon">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <a href="#">Devenir partenaire</a>
+                </div>
+    
+                <div class="footer__elem">
+                    <a href="#">Mentions légales</a>
+                </div>
+                
+                <div class="footer__elem">
+                    <a href="mailto:contact@ohmyfood.com">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </footer>
+
+</body>
+</html>
