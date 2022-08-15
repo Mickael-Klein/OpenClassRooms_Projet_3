@@ -556,7 +556,7 @@ footer h2 {
   position: absolute;
   top: 0;
   opacity: 0;
-  z-index: 2;
+  z-index: 4;
 }
 
 @-webkit-keyframes filter {
@@ -1116,6 +1116,9 @@ main {
   .btn--menu {
     width: 33%;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
